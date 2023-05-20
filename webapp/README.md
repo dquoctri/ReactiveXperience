@@ -44,3 +44,18 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+# update latest all dependencies
+yarn add --dev @typescript-eslint/eslint-plugin eslint eslint-plugin-react prettier
+yarn add react react-cookie react-dom react-i18next react-redux react-router-dom react-scripts typescript
+
+
+yarn add redux redux-thunk redux-saga redux-promise-middleware redux-logger redux-persist reduxjs-toolkit-persist
+yarn add @types/jest @types/node @types/react @types/react-dom @types/react-redux @types/react-router-dom @types/redux-logger @typescript-eslint/parser
+yarn add @reduxjs/toolkit @testing-library/jest-dom @testing-library/react @testing-library/user-event
+
+# format code with pretier
+yarn run prettier --write src
+
+
