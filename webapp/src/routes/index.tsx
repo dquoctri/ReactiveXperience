@@ -1,9 +1,9 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
-// import { MainRoutes, AdminRoutes } from "./config.d"
+import { HomeRoutes, AdminRoutes } from './config.d'
 
 const AppRoutes = () => {
-  const routing = useRoutes([])
+  const routing = useRoutes([AdminRoutes, HomeRoutes])
   return <>{routing}</>
 }
 

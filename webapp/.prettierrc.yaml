@@ -1,5 +1,34 @@
-trailingComma: "es5"
+printWidth: 120
 tabWidth: 2
+useTabs: false
 semi: false
 singleQuote: true
-printWidth: 120
+
+# "as-needed" - Only add quotes around object properties where required.
+# "consistent" - If at least one property in an object requires quotes, quote all properties.
+# "preserve" - Respect the input use of quotes in object properties.
+quoteProps: "as-needed"
+jsxSingleQuote: false
+
+# "es5" - Trailing commas where valid in ES5 (objects, arrays, etc.). No trailing commas in type parameters in TypeScript.
+# "none" - No trailing commas.
+# "all" - Trailing commas wherever possible (including function parameters and calls).
+trailingComma: "es5"
+
+bracketSpacing: true
+bracketSameLine: true
+
+# "always" - Always include parens. Example: (x) => x
+# "avoid" - Omit parens when possible. Example: x => x
+arrowParens: "avoid"
+
+requirePragma: false
+insertPragma: false
+
+# "lf" – Line Feed only (\n), common on Linux and macOS as well as inside git repos
+# "crlf" - Carriage Return + Line Feed characters (\r\n), common on Windows
+# "cr" - Carriage Return character only (\r), used very rarely
+# "auto" - Maintain existing line endings (mixed values within one file are normalised by looking at what’s used after the first line)
+endOfLine: "lf"
+
+embeddedLanguageFormatting: "auto"
