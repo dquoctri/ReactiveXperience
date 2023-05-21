@@ -55,7 +55,7 @@ yarn add redux redux-thunk redux-saga redux-promise-middleware redux-logger redu
 yarn add @types/jest @types/node @types/react @types/react-dom @types/react-redux @types/react-router-dom @types/redux-logger @typescript-eslint/parser
 yarn add @reduxjs/toolkit @testing-library/jest-dom @testing-library/react @testing-library/user-event
 
+yarn add axios
+
 # format code with pretier
 yarn run prettier --write src
-
-
