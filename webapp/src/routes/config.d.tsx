@@ -4,17 +4,17 @@ import MainLayout from 'components/layouts/main.layout'
 import AdminLayout from 'components/layouts/admin.layout'
 import Loadable from './loadable'
 
-const NotFound = Loadable('../pages/warning/404')
-const Unauthorized = Loadable('../pages/warning/401')
-const Forbidden = Loadable('../pages/warning/403')
-const Login = Loadable(lazy(() => import('../pages/login')))
-const Home = Loadable(lazy(() => import('../pages/home')))
+const NotFound = Loadable('pages/warning/404')
+const Unauthorized = Loadable('pages/warning/401')
+const Forbidden = Loadable('pages/warning/403')
+const Login = Loadable(lazy(() => import('pages/login')))
+const Home = Loadable(lazy(() => import('pages/home')))
 const AdminDashboard = Loadable(
-  lazy(() => import('../pages/admin/dashboard')),
+  lazy(() => import('pages/admin/dashboard')),
   { roles: ['ADMIN'] }
 )
 const Management = Loadable(
-  lazy(() => import('../pages/admin/management')),
+  lazy(() => import('pages/admin/management')),
   { roles: ['ADMIN'] }
 )
 
