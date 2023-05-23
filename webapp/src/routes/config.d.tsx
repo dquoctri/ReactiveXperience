@@ -31,12 +31,17 @@ export const HomeRoutes: RouteObject = {
   children: [
     { index: true, element: <Home /> },
     { path: "about", element: <Home title="About" /> },
-    { path: "login", element: <Login title="Login" /> },
     { path: "403", element: <Forbidden title="Forbidden" /> },
     { path: "401", element: <Unauthorized title="Unauthorized" /> },
     { path: "404", element: <NotFound title="NotFound" /> },
     { path: "*", element: <Navigate to="/404" /> },
   ],
+}
+
+export const LoginRoutes: RouteObject = {
+  path: "/login",
+  element: <Login title="Login" />,
+  errorElement: <ServerError />,
 }
 
 export const HookRoutes: RouteObject = {

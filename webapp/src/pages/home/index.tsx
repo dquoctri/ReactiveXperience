@@ -6,7 +6,7 @@ const Home = ({ title }: PageProps) => {
   return (
     <Fragment>
       <PageTitle title={title ? title : "Home"} />
-      <div>Home</div>
+      <div>Home content</div>
     </Fragment>
   )
 }

@@ -5,6 +5,7 @@ const Dashboard = () => {
   return (
     <Fragment>
       <PageTitle title="Admin-Dashboard" />
+      <div>Admin-Dashboard content</div>
     </Fragment>
   )
 }

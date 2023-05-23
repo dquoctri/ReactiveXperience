@@ -4,7 +4,8 @@ import PageTitle from "components/common/page-title"
 const Management = () => {
   return (
     <Fragment>
-      <PageTitle title="Admin-Dashboard" />
+      <PageTitle title="Admin-Management" />
+      <div>Admin-Management content</div>
     </Fragment>
   )
 }

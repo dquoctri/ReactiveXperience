@@ -1,14 +1,12 @@
 import React, { Fragment } from "react"
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
+import MainNav from "components/nav.component"
 
 const AdminLayout = () => {
   return (
     <Fragment>
       <header>
-        {/* <Header /> */}
-        <Link to="/">home </Link>
-        <Link to="/admin">admin</Link>
-        <Link to="/admin/management">dashboard </Link>
+        <MainNav />
       </header>
       <Outlet />
       <footer>
