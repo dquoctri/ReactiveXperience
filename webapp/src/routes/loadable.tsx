@@ -3,10 +3,7 @@ import Loader from "../components/common/loader.common"
 import ProtectedRoute from "./protected.route"
 import ProtectedProps from "./protected.type"
 
-const Loadable = (
-  Component: LazyExoticComponent<(ref: any) => JSX.Element>,
-  protectedProps?: ProtectedProps
-) => {
+const Loadable = (Component: LazyExoticComponent<(ref: any) => JSX.Element>, protectedProps?: ProtectedProps) => {
   const render = (props: any) => {
     return (
       <ProtectedRoute {...protectedProps}>

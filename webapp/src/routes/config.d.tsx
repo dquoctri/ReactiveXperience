@@ -25,7 +25,7 @@ export const HomeRoutes: RouteObject = {
   errorElement: <ServerError />,
   children: [
     { index: true, element: <Home /> },
-    { path: "about", element: <Home title="About" />},
+    { path: "about", element: <Home title="About" /> },
     { path: "login", element: <Login title="Login" /> },
     { path: "403", element: <Forbidden title="Forbidden" /> },
     { path: "401", element: <Unauthorized title="Unauthorized" /> },

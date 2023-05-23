@@ -5,8 +5,8 @@ import AboutPage from "pages/route/about"
 import ContactPage from "pages/route/contact"
 import ProductPage from "pages/route/product"
 import NextPage from "pages/route/next"
-import ProductLayout from "pages/route/product.layout"
-import MainLayout from "pages/route/main.layout"
+import ProductLayout from "pages/route/components/product.layout"
+import MainLayout from "pages/route/components/main.layout"
 
 const DemoRoutes = () => {
   return (

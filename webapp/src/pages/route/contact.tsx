@@ -4,7 +4,7 @@ import PageTitle from "components/common/page-title"
 import PageProps from "pages/page.type"
 
 const Contact = ({ title }: PageProps) => {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams, _setSearchParams] = useSearchParams()
   const email = searchParams.get("email")
   const age = searchParams.get("age")
 
@@ -22,7 +22,6 @@ const Contact = ({ title }: PageProps) => {
       <div>Contact: Mango</div>
       <div>{emailContent}</div>
       <div>{ageContent}</div>
-      
     </Fragment>
   )
 }

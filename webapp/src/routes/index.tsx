@@ -4,8 +4,8 @@ import { HomeRoutes, AdminRoutes } from "./config.d"
 import { MainRoutes, ProductRoutes, NextRoutes } from "./demo.config.d"
 
 const AppRoutes = () => {
-  const routing = useRoutes([AdminRoutes, HomeRoutes])
-  const _routing = useRoutes([MainRoutes, ProductRoutes, NextRoutes])
+  const _routing = useRoutes([AdminRoutes, HomeRoutes])
+  const routing = useRoutes([MainRoutes, ProductRoutes, NextRoutes])
   return <>{routing}</>
 }
 

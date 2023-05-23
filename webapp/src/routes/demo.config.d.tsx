@@ -8,8 +8,8 @@ const AboutPage = Loadable(lazy(() => import("pages/route/about")))
 const ContactPage = Loadable(lazy(() => import("pages/route/contact")))
 const ProductPage = Loadable(lazy(() => import("pages/route/product")))
 const NextPage = Loadable(lazy(() => import("pages/route/next")))
-const ProductLayout = Loadable(lazy(() => import("pages/route/product.layout")))
-const MainLayout = Loadable(lazy(() => import("pages/route/main.layout")))
+const ProductLayout = Loadable(lazy(() => import("pages/route/components/product.layout")))
+const MainLayout = Loadable(lazy(() => import("pages/route/components/main.layout")))
 
 const NotFound = Loadable(lazy(() => import("pages/warning/404")))
 const Unauthorized = Loadable(lazy(() => import("pages/warning/401")))
@@ -41,7 +41,5 @@ export const ProductRoutes: RouteObject = {
 
 export const NextRoutes: RouteObject = {
   path: "/next",
-  element: <NextPage />
+  element: <NextPage />,
 }
-
-
