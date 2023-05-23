@@ -19,6 +19,9 @@ const ScrollPositionPage = Loadable(lazy(() => import("pages/custom-hook/scroll-
 const PaginationPage = Loadable(lazy(() => import("pages/custom-hook/pagination.page")))
 const AuthenticationPage = Loadable(lazy(() => import("pages/custom-hook/auth-login.page")))
 
+const ReduxLayout = Loadable(lazy(() => import("pages/redux/redux.layout")))
+const ReduxPage = Loadable(lazy(() => import("pages/redux/redux.page")))
+
 const AdminDashboard = Loadable(
   lazy(() => import("pages/admin/dashboard")),
   { roles: ["ADMIN"] }
@@ -60,6 +63,13 @@ export const HookRoutes: RouteObject = {
     { path: "pagination", element: <PaginationPage title="Pagination" /> },
     { path: "authentication", element: <AuthenticationPage title="Authentication" /> },
   ],
+}
+
+export const ReduxRoutes: RouteObject = {
+  path: "/redux",
+  element: <ReduxLayout />,
+  errorElement: <ServerError />,
+  children: [{ index: true, element: <ReduxPage /> }],
 }
 
 export const AdminRoutes: RouteObject = {
