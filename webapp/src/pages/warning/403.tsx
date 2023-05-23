@@ -4,8 +4,8 @@ import PageTitle from "components/common/page-title"
 const Forbidden = () => {
   return (
     <Fragment>
-      <PageTitle title="Forbidden-Deadline" />
-      <p>403 Access Denied: Please go back, don't lose your way!</p>
+      <PageTitle title="Forbidden" />
+      <p>403 Access Denied: Please go back, don&apos;t lose your way!</p>
     </Fragment>
   )
 }

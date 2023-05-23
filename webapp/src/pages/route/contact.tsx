@@ -9,19 +9,11 @@ const Contact = ({ title }: PageProps) => {
   const age = searchParams.get("age")
 
   const emailContent = useMemo(() => {
-    if (!email) {
-      console.log("email is not found")
-      return
-    }
-    return <>email: {email}</>
+    return email && <>email: {email}</>
   }, [email])
 
   const ageContent = useMemo(() => {
-    if (!age) {
-      console.log("age is not found")
-      return
-    }
-    return <>age: {age}</>
+    return age && <>age: {age}</>
   }, [age])
 
   return (
@@ -30,6 +22,7 @@ const Contact = ({ title }: PageProps) => {
       <div>Contact: Mango</div>
       <div>{emailContent}</div>
       <div>{ageContent}</div>
+      
     </Fragment>
   )
 }

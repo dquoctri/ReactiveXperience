@@ -2,12 +2,12 @@ import React from "react"
 import { BrowserRouter } from "react-router-dom"
 import "./App.css"
 import Routes from "routes"
-import DemoRoutes from "routes/demo.route"
+import _Routes from "routes/demo.route"
 
 function App() {
   return (
     <BrowserRouter>
-      <DemoRoutes />
+      <Routes />
     </BrowserRouter>
   )
 }
