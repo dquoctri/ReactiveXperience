@@ -5,8 +5,8 @@ import PageProps from "pages/page.type"
 const Home = ({ title }: PageProps) => {
   return (
     <Fragment>
-      <PageTitle title={title ? title : "Home"} />
-      <div>About</div>
+      <PageTitle title={title ? title : "Hello, Xoài"} />
+      <div>Home</div>
     </Fragment>
   )
 }
