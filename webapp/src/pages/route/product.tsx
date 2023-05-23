@@ -3,10 +3,10 @@ import PageTitle from "components/common/page-title"
 import PageProps from "pages/page.type"
 
 interface ProfuctProps extends PageProps {
-  productId: number
+  productId?: number
 }
 
-const Product = ({ title }: PageProps) => {
+const Product = ({ title, productId }: ProfuctProps) => {
   return (
     <Fragment>
       <PageTitle title={title ? title : "Product"} />

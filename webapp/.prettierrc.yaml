@@ -29,6 +29,6 @@ insertPragma: false
 # "crlf" - Carriage Return + Line Feed characters (\r\n), common on Windows
 # "cr" - Carriage Return character only (\r), used very rarely
 # "auto" - Maintain existing line endings (mixed values within one file are normalised by looking at what’s used after the first line)
-endOfLine: "lf"
+endOfLine: "crlf"
 
 embeddedLanguageFormatting: "auto"

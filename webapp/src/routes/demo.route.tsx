@@ -1,6 +1,9 @@
 import React from "react"
 import { Routes, Route } from "react-router-dom"
-import { HomeRoutes, AdminRoutes } from "./config.d"
+import HomePage from "pages/route/home"
+import AboutPage from "pages/route/about"
+import ContactPage from "pages/route/contact"
+import ProductPage from "pages/route/product"
 
 const DemoRoutes = () => {
   return (
@@ -18,7 +21,7 @@ const DemoRoutes = () => {
               <a href="/contract">Contract</a>
             </li>
             <li>
-              <a href="/product">Product</a>
+              <a href="/contract">Product</a>
             </li>
             <li>
               <a href="/product/1">Product1</a>
@@ -27,7 +30,10 @@ const DemoRoutes = () => {
         </nav>
       </div>
       <Routes>
-        <Route path="" />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact?:" element={<ContactPage />} />
+        <Route path="/product/:productId" element={<ProductPage />} />
       </Routes>
     </>
   )

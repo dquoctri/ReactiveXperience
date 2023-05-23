@@ -35,7 +35,7 @@ npm -v
 9.6.7
 
 
-## [Install via npm](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+## [Install yarn via npm](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
 It is recommended to install Yarn through the npm package manager, which comes bundled with Node.js when you install it on your system.
 
 Once you have npm installed you can run the following both to install and upgrade Yarn:
@@ -114,31 +114,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 Clone the repository
 ```
 git clone https://github.com/dquoctri/ReactiveXperience.git
-
 ```
 
 ```
 cd ./ReactiveXperience/webapp
 yarn start
-
 ```
-
-# update latest all dependencies
-```
-yarn add @reduxjs/toolkit @testing-library/jest-dom @testing-library/react @testing-library/user-event
-
-yarn add @types/jest @types/node @types/react @types/react-dom @types/react-redux @types/react-router-dom @types/redux-logger @typescript-eslint/parser
-
-yarn add i i18next i18next-browser-languagedetector jwt-decode prop-types
-
-yarn add react react-cookie react-dom react-helmet-async react-i18next react-redux react-router-dom react-scripts
-
-yarn add redux redux-logger redux-persist redux-thunk typescript
-
-yarn add --dev @typescript-eslint/eslint-plugin eslint eslint-plugin-react prettier
-```
-
-# Other
-
-## format code with pretier
-yarn run prettier --write src
