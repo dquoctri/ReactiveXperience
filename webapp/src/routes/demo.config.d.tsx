@@ -3,13 +3,13 @@ import { Navigate, RouteObject } from "react-router-dom"
 import Loadable from "./loadable"
 import Loader from "components/common/loader.common"
 
-const HomePage = Loadable(lazy(() => import("pages/route/home")))
-const AboutPage = Loadable(lazy(() => import("pages/route/about")))
-const ContactPage = Loadable(lazy(() => import("pages/route/contact")))
-const ProductPage = Loadable(lazy(() => import("pages/route/product")))
-const NextPage = Loadable(lazy(() => import("pages/route/next")))
-const ProductLayout = Loadable(lazy(() => import("pages/route/components/product.layout")))
-const MainLayout = Loadable(lazy(() => import("pages/route/components/main.layout")))
+const HomePage = Loadable(lazy(() => import("pages/route/home.page")))
+const AboutPage = Loadable(lazy(() => import("pages/route/about.page")))
+const ContactPage = Loadable(lazy(() => import("pages/route/contact.page")))
+const ProductPage = Loadable(lazy(() => import("pages/route/product.page")))
+const NextPage = Loadable(lazy(() => import("pages/route/next.page")))
+const ProductLayout = Loadable(lazy(() => import("pages/route/product.layout")))
+const MainLayout = Loadable(lazy(() => import("pages/route/main.layout")))
 
 const NotFound = Loadable(lazy(() => import("pages/warning/404")))
 const Unauthorized = Loadable(lazy(() => import("pages/warning/401")))

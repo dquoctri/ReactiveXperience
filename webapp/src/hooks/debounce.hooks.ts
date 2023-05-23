@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState, DependencyList } from "react"
+import { useCallback, useEffect, useState, DependencyList } from "react"
 
-const useDebounce = <T>(value: T, delay: number): T => {
+export const useDebounce = <T>(value: T, delay: number): T => {
   const [debouncedValue, setDebouncedValue] = useState(value)
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const useDebounce = <T>(value: T, delay: number): T => {
   return debouncedValue
 }
 
-export const useDebouncedEffect = <T extends Function>(effect: T, delay: number, deps: DependencyList) => {
+export const useDebouncedEffect = (effect: () => void, delay: number, deps: DependencyList): void => {
   const callback = useCallback(effect, deps)
   useEffect(() => {
     const handler = setTimeout(() => {

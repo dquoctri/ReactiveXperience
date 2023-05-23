@@ -1,12 +1,12 @@
 import React from "react"
 import { Routes, Route, Link } from "react-router-dom"
-import HomePage from "pages/route/home"
-import AboutPage from "pages/route/about"
-import ContactPage from "pages/route/contact"
-import ProductPage from "pages/route/product"
-import NextPage from "pages/route/next"
-import ProductLayout from "pages/route/components/product.layout"
-import MainLayout from "pages/route/components/main.layout"
+import HomePage from "pages/route/home.page"
+import AboutPage from "pages/route/about.page"
+import ContactPage from "pages/route/contact.page"
+import ProductPage from "pages/route/product.page"
+import NextPage from "pages/route/next.page"
+import ProductLayout from "pages/route/product.layout"
+import MainLayout from "pages/route/main.layout"
 
 const DemoRoutes = () => {
   return (
