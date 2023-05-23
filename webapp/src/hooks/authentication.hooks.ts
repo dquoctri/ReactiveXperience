@@ -1,25 +1,37 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 
-const useAuthentication = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+interface User {
+  id: number
+  email: string
+}
 
-  useEffect(() => {
-    const storedAuth = localStorage.getItem("isAuthenticated")
-    setIsAuthenticated(storedAuth === "true")
-  }, [])
+interface AuthData {
+  user: User | null
+  login: (email: string, password: string) => void
+  logout: () => void
+}
 
-  const login = () => {
-    setIsAuthenticated(true)
-    localStorage.setItem("isAuthenticated", "true")
+export const useAuthentication = (): AuthData => {
+  const [user, setUser] = useState<User | null>(null)
+
+  const login = (email: string, password: string) => {
+    // Perform login logic here (e.g., API request)
+    // If successful, set the authenticated user
+    const authenticatedUser: User = {
+      id: 1,
+      email: email,
+    }
+    setUser(authenticatedUser)
   }
 
   const logout = () => {
-    setIsAuthenticated(false)
-    localStorage.setItem("isAuthenticated", "false")
+    // Perform logout logic here (e.g., clearing session)
+    // Set the user to null to indicate no authenticated user
+    setUser(null)
   }
 
   return {
-    isAuthenticated,
+    user,
     login,
     logout,
   }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import PageTitle from "components/common/page-title"
 import PageProps from "pages/page.type"
-import { useDebounce } from "hooks/debounce.hooks"
+import { useDebounce } from "hooks"
 
 const Debouse = ({ title }: PageProps) => {
   const [inputValue, setInputValue] = useState("")

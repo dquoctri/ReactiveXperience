@@ -14,6 +14,10 @@ const Login = Loadable(lazy(() => import("pages/login")))
 const CustomHookLayout = Loadable(lazy(() => import("pages/custom-hook/custom-hook.layout")))
 const MainHookPage = Loadable(lazy(() => import("pages/custom-hook/main.page")))
 const DebouseHookPage = Loadable(lazy(() => import("pages/custom-hook/debouse.page")))
+const LocalStoragePage = Loadable(lazy(() => import("pages/custom-hook/local-storage.page")))
+const ScrollPositionPage = Loadable(lazy(() => import("pages/custom-hook/scroll-position.page")))
+const PaginationPage = Loadable(lazy(() => import("pages/custom-hook/pagination.page")))
+const AuthenticationPage = Loadable(lazy(() => import("pages/custom-hook/auth-login.page")))
 
 const AdminDashboard = Loadable(
   lazy(() => import("pages/admin/dashboard")),
@@ -51,6 +55,10 @@ export const HookRoutes: RouteObject = {
   children: [
     { index: true, element: <MainHookPage /> },
     { path: "debouse", element: <DebouseHookPage title="Debouse" /> },
+    { path: "local-storage", element: <LocalStoragePage title="Local Storage" /> },
+    { path: "scroll-position", element: <ScrollPositionPage title="Scroll Position" /> },
+    { path: "pagination", element: <PaginationPage title="Pagination" /> },
+    { path: "authentication", element: <AuthenticationPage title="Authentication" /> },
   ],
 }
 
