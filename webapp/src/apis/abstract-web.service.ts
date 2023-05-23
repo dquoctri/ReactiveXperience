@@ -18,7 +18,7 @@ export abstract class WebService {
 
   constructor() {
     this.instance = axios.create(options)
-    this.instance.interceptors.request.use((config) => this.setHeaders(config))
+    this.instance.interceptors.request.use(config => this.setHeaders(config))
   }
 
   protected async get<T>(url: string): Promise<T> {
@@ -95,6 +95,6 @@ export abstract class WebService {
   }
 
   private isHeaderAlreadyAdded(name: string): boolean {
-    return this.headers.find((h) => h.name === name) !== undefined
+    return this.headers.find(h => h.name === name) !== undefined
   }
 }

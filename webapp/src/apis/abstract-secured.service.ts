@@ -14,7 +14,7 @@ export abstract class SecuredService extends WebService {
       // if (!authentication || !authentication.token || isExpired(authentication.expiresAt || 0)) {
       //   return null
       // }
-      return "Bearer ";
+      return "Bearer "
     }
     this.addDynamicHeader("Authorization", getToken)
   }

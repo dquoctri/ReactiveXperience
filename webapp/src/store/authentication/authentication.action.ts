@@ -1,4 +1,4 @@
-import { AuthenticationState, AuthenticationType } from './authentication.state'
+import { AuthenticationState, AuthenticationType } from "./authentication.state"
 
 export const login = (data: AuthenticationState) => {
   return {
@@ -10,6 +10,6 @@ export const login = (data: AuthenticationState) => {
 export const logout = () => {
   return {
     type: AuthenticationType.SET_AUTHENTICATION,
-    payload: { authenticated: false, email: '', roles: [] },
+    payload: { authenticated: false, email: "", roles: [] },
   }
 }

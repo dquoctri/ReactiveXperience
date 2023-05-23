@@ -25,7 +25,7 @@ rules:
     - unix
   quotes:
     - warn
-    - single
+    - double
   semi:
     - warn
     - never

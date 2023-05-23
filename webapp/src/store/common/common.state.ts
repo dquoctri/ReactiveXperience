@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 export enum CommonType {
-  SET_LANGUAGE = 'common/language',
-  SET_MODE = 'common/mode',
+  SET_LANGUAGE = "common/language",
+  SET_MODE = "common/mode",
 }
 
 export interface CommonState {
@@ -10,7 +10,7 @@ export interface CommonState {
   mode: string
 }
 
-const initialState: CommonState = { lng: 'ENG', mode: 'LIGHT' }
+const initialState: CommonState = { lng: "ENG", mode: "LIGHT" }
 
 function LanguageReducer(state: CommonState, action: PayloadAction<string>) {
   state.lng = action.payload
@@ -21,7 +21,7 @@ function ModeReducer(state: CommonState, action: PayloadAction<string>) {
 }
 
 const { reducer } = createSlice({
-  name: 'common',
+  name: "common",
   initialState,
   reducers: {
     language: LanguageReducer,

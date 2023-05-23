@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 export enum AuthenticationType {
-  SET_AUTHENTICATION = 'authentication/authentication',
+  SET_AUTHENTICATION = "authentication/authentication",
 }
 
 export interface AuthenticationState {
@@ -10,7 +10,7 @@ export interface AuthenticationState {
   roles: Array<string>
 }
 
-const initialState: AuthenticationState = { authenticated: false, email: '', roles: [] }
+const initialState: AuthenticationState = { authenticated: false, email: "", roles: [] }
 
 function AuthenticationReducer(state: AuthenticationState, action: PayloadAction<AuthenticationState>) {
   state.authenticated = action.payload.authenticated
@@ -19,7 +19,7 @@ function AuthenticationReducer(state: AuthenticationState, action: PayloadAction
 }
 
 const { reducer } = createSlice({
-  name: 'authentication',
+  name: "authentication",
   initialState,
   reducers: {
     authentication: AuthenticationReducer,

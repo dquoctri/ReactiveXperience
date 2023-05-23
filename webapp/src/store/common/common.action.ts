@@ -1,4 +1,4 @@
-import { CommonType } from './common.state'
+import { CommonType } from "./common.state"
 
 export const setLanguage = (payload: string) => {
   return {

@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from "react"
 
 const usePagination = (itemsPerPage: number, initialPage = 1) => {
-  const [currentPage, setCurrentPage] = useState(initialPage);
+  const [currentPage, setCurrentPage] = useState(initialPage)
 
   const goToPage = (page: number) => {
-    setCurrentPage(page);
-  };
+    setCurrentPage(page)
+  }
 
   const nextPage = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
+    setCurrentPage(prevPage => prevPage + 1)
+  }
 
   const prevPage = () => {
-    setCurrentPage((prevPage) => prevPage - 1);
-  };
+    setCurrentPage(prevPage => prevPage - 1)
+  }
 
   const getPaginatedData = (data: any) => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    return data.slice(startIndex, endIndex);
-  };
+    const startIndex = (currentPage - 1) * itemsPerPage
+    const endIndex = startIndex + itemsPerPage
+    return data.slice(startIndex, endIndex)
+  }
 
   return {
     currentPage,
@@ -27,5 +27,5 @@ const usePagination = (itemsPerPage: number, initialPage = 1) => {
     nextPage,
     prevPage,
     getPaginatedData,
-  };
-};
+  }
+}

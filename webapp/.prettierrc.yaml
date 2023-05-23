@@ -2,7 +2,7 @@ printWidth: 120
 tabWidth: 2
 useTabs: false
 semi: false
-singleQuote: true
+singleQuote: false
 
 # "as-needed" - Only add quotes around object properties where required.
 # "consistent" - If at least one property in an object requires quotes, quote all properties.

@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from 'pages/home';
-import Admin from 'pages/admin/dashboard';
-import NotFound from './404';
+import React from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from "pages/home"
+import Admin from "pages/admin/dashboard"
+import NotFound from "./404"
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Route element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default App;
+export default App

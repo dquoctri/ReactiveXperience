@@ -5,5 +5,5 @@ import * as authenticationActions from "store/authentication/authentication.acti
 
 export const useActions = () => {
   const dispatch = useDispatch()
-  return bindActionCreators({...commonActions, ...authenticationActions}, dispatch);
+  return bindActionCreators({ ...commonActions, ...authenticationActions }, dispatch)
 }
