@@ -51,7 +51,7 @@ yarn add --dev @typescript-eslint/eslint-plugin eslint eslint-plugin-react prett
 yarn add react react-cookie react-dom react-i18next react-redux react-router-dom react-scripts typescript
 
 
-yarn add redux redux-thunk redux-saga redux-promise-middleware redux-logger redux-persist reduxjs-toolkit-persist @reduxjs/toolkit
+yarn add redux redux-thunk redux-saga redux-promise-middleware redux-logger redux-persist redux-persist-cookie-storage reduxjs-toolkit-persist @reduxjs/toolkit
 yarn add @types/jest @types/node @types/react @types/react-dom @types/react-redux @types/react-router-dom @types/redux-logger @typescript-eslint/parser
 yarn add @testing-library/jest-dom @testing-library/react @testing-library/user-event
 

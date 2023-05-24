@@ -20,7 +20,7 @@ function ModeReducer(state: CommonState, action: PayloadAction<string>) {
   state.mode = action.payload
 }
 
-const { reducer } = createSlice({
+const { reducer, actions } = createSlice({
   name: "common",
   initialState,
   reducers: {
@@ -29,4 +29,5 @@ const { reducer } = createSlice({
   },
 })
 
-export { reducer as CommonReducer }
+export const { language, mode } = actions
+export default reducer

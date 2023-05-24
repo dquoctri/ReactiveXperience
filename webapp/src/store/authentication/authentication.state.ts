@@ -18,7 +18,7 @@ function AuthenticationReducer(state: AuthenticationState, action: PayloadAction
   state.roles = action.payload.roles
 }
 
-const { reducer } = createSlice({
+const { reducer, actions } = createSlice({
   name: "authentication",
   initialState,
   reducers: {
@@ -26,4 +26,5 @@ const { reducer } = createSlice({
   },
 })
 
-export { reducer as AuthenticationReducer }
+export const { authentication } = actions
+export default reducer

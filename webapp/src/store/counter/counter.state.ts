@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit"
+import { createReducer, createSlice } from "@reduxjs/toolkit"
 
 interface CounterState {
   count: number
@@ -19,3 +19,19 @@ const counterReducer = createReducer(initialState, builder => {
 })
 
 export default counterReducer
+
+const _counterSlice = createSlice({
+  name: "counter",
+  initialState,
+  reducers: {
+    increment: state => {
+      state.count += 1
+    },
+    decrement: state => {
+      state.count -= 1
+    },
+  },
+})
+
+// export const { increment, decrement } = counterSlice.actions;
+// export default counterSlice.reducer

@@ -1,7 +1,7 @@
 import React, { lazy } from "react"
 import { Navigate, RouteObject } from "react-router-dom"
 import Loadable from "./loadable"
-import Loader from "components/common/loader.common"
+import ServerError from "pages/warning/500"
 
 const HomePage = Loadable(lazy(() => import("pages/route/home.page")))
 const AboutPage = Loadable(lazy(() => import("pages/route/about.page")))
@@ -18,7 +18,7 @@ const Forbidden = Loadable(lazy(() => import("pages/warning/403")))
 export const MainRoutes: RouteObject = {
   path: "/",
   element: <MainLayout />,
-  errorElement: <Loader />,
+  errorElement: <ServerError />,
   children: [
     { index: true, element: <HomePage /> },
     { path: "about", element: <AboutPage title="About" /> },

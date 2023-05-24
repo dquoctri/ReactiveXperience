@@ -8,6 +8,7 @@ import "./index.css"
 import App from "./App"
 import { store, persistor } from "./store"
 import reportWebVitals from "./reportWebVitals"
+import Loader from "components/common/loader.common"
 
 const isDevelopment = process.env.NODE_ENV === "development"
 const Envelop = isDevelopment ? React.StrictMode : React.Fragment
@@ -17,7 +18,7 @@ root.render(
   <Envelop>
     <CookiesProvider>
       <ReduxProvider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+        <PersistGate loading={<Loader text="Redux loading..." />} persistor={persistor}>
           <HelmetProvider>
             <App />
           </HelmetProvider>

@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from "axios"
+import Cookies from "js-cookie"
 
 export const SERVER_URL = process.env.NODE_ENV === "development" ? process.env.REACT_APP_SERVER_URL : ""
 
@@ -78,6 +79,11 @@ export abstract class WebService {
   }
 
   protected setHeaders(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
+    let csrf = Cookies.get("_csrf")
+    if (config.url && config.url.indexOf("rest") !== -1 && config.url.indexOf("api") === -1) {
+      config.url += config.url.indexOf("?") === -1 ? "?" : "&"
+      config.url += "_csrf=" + csrf
+    }
     if (!config.headers) {
       console.warn("Skipping setting headers since Axios config headers is null")
       return config
