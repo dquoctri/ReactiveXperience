@@ -19,8 +19,8 @@ const ScrollPositionPage = Loadable(lazy(() => import("pages/custom-hook/scroll-
 const PaginationPage = Loadable(lazy(() => import("pages/custom-hook/pagination.page")))
 const AuthenticationPage = Loadable(lazy(() => import("pages/custom-hook/auth-login.page")))
 
-const ReduxLayout = Loadable(lazy(() => import("pages/redux/redux.layout")))
-const ReduxPage = Loadable(lazy(() => import("pages/redux/redux.page")))
+const StateManagementLayout = Loadable(lazy(() => import("pages/state-management/state-management.layout")))
+const ReduxPage = Loadable(lazy(() => import("pages/state-management/redux.page")))
 
 const AdminDashboard = Loadable(
   lazy(() => import("pages/admin/dashboard")),
@@ -31,7 +31,7 @@ const Management = Loadable(
   { roles: ["ADMIN"] }
 )
 
-export const HomeRoutes: RouteObject = {
+export const homeRoutes: RouteObject = {
   path: "/",
   element: <MainLayout />,
   errorElement: <ServerError />,
@@ -45,18 +45,18 @@ export const HomeRoutes: RouteObject = {
   ],
 }
 
-export const LoginRoutes: RouteObject = {
+export const loginRoutes: RouteObject = {
   path: "/login",
   element: <Login title="Login" />,
   errorElement: <ServerError />,
 }
 
-export const HookRoutes: RouteObject = {
+export const hookRoutes: RouteObject = {
   path: "/custom-hook",
   element: <CustomHookLayout />,
   errorElement: <ServerError />,
   children: [
-    { index: true, element: <MainHookPage /> },
+    { index: true, element: <DebouseHookPage /> },
     { path: "debouse", element: <DebouseHookPage title="Debouse" /> },
     { path: "local-storage", element: <LocalStoragePage title="Local Storage" /> },
     { path: "scroll-position", element: <ScrollPositionPage title="Scroll Position" /> },
@@ -65,11 +65,15 @@ export const HookRoutes: RouteObject = {
   ],
 }
 
-export const ReduxRoutes: RouteObject = {
-  path: "/redux",
-  element: <ReduxLayout />,
+export const reduxRoutes: RouteObject = {
+  path: "/state-management",
+  element: <StateManagementLayout />,
   errorElement: <ServerError />,
-  children: [{ index: true, element: <ReduxPage /> }],
+  children: [
+    { index: true, element: <ReduxPage /> },
+    { path: "context", element: <ReduxPage /> },
+    { path: "redux", element: <ReduxPage /> }]
+  ,
 }
 
 export const AdminRoutes: RouteObject = {

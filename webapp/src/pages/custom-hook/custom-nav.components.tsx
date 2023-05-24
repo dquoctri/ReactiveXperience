@@ -7,9 +7,6 @@ const CustomHookNav = () => (
       <nav>
         <ul>
           <li>
-            <Link to="/custom-hook">Custom Hook</Link>
-          </li>
-          <li>
             <Link to="/custom-hook/debouse">Debouse</Link>
           </li>
           <li>

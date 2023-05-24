@@ -15,7 +15,7 @@ const NotFound = Loadable(lazy(() => import("pages/warning/404")))
 const Unauthorized = Loadable(lazy(() => import("pages/warning/401")))
 const Forbidden = Loadable(lazy(() => import("pages/warning/403")))
 
-export const MainRoutes: RouteObject = {
+export const mainRoutes: RouteObject = {
   path: "/",
   element: <MainLayout />,
   errorElement: <ServerError />,
@@ -30,16 +30,12 @@ export const MainRoutes: RouteObject = {
   ],
 }
 
-export const ProductRoutes: RouteObject = {
+export const productRoutes: RouteObject = {
   path: "/product",
   element: <ProductLayout />,
   children: [
     { index: true, element: <ProductPage /> },
     { path: ":productId", element: <ProductPage /> },
+    { path: "next", element: <NextPage /> },
   ],
-}
-
-export const NextRoutes: RouteObject = {
-  path: "/next",
-  element: <NextPage />,
 }

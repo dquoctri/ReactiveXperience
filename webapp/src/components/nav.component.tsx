@@ -13,7 +13,7 @@ const MainNav = () => (
             <Link to="/custom-hook">Custom Hooks</Link>
           </li>
           <li>
-            <Link to="/redux">Redux</Link>
+            <Link to="/state-management">State Management</Link>
           </li>
           <li>
             <Link to="/admin">Admin</Link>

@@ -1,5 +1,5 @@
 import React from "react"
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import HomePage from "pages/route/home.page"
 import AboutPage from "pages/route/about.page"
 import ContactPage from "pages/route/contact.page"
@@ -18,11 +18,11 @@ const DemoRoutes = () => {
           <Route path="contact" element={<ContactPage />} />
           <Route path="*" element={<>Not found</>} />
         </Route>
-        <Route element={<ProductLayout />}>
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/product/:productId" element={<ProductPage />} />
+        <Route path="/product" element={<ProductLayout />}>
+          <Route index element={<ProductPage />} />
+          <Route path=":productId" element={<ProductPage />} />
+          <Route path="next" element={<NextPage />} />
         </Route>
-        <Route path="/next" element={<NextPage />} />
       </Routes>
     </>
   )

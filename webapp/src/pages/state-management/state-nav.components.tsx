@@ -7,7 +7,7 @@ const ReduxNav = () => (
       <nav>
         <ul>
           <li>
-            <Link to="/redux">Redux</Link>
+            <Link to="/state-management/redux">Redux</Link>
           </li>
         </ul>
       </nav>
