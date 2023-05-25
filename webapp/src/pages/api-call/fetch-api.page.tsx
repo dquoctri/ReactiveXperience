@@ -1,35 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react"
 
 const FetchExample = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.example.com/data');
+        const response = await fetch("https://api.example.com/data")
         if (!response.ok) {
-          throw new Error('Request failed');
+          throw new Error("Request failed")
         }
-        const json = await response.json();
-        setData(json);
-        setLoading(false);
-      } catch (error: any) {
-        setError(error && error.message);
-        setLoading(false);
+        const json = await response.json()
+        setData(json)
+        setLoading(false)
+      } catch (error) {
+        let message = "Unknown Error"
+        if (error instanceof Error) message = error.message
+        setError(message)
+        setLoading(false)
       }
-    };
+    }
 
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>Error: {error}</div>
   }
 
   return (
@@ -37,7 +39,7 @@ const FetchExample = () => {
       <h1>API Data</h1>
       {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
     </div>
-  );
-};
+  )
+}
 
-export default FetchExample;
+export default FetchExample

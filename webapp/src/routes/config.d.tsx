@@ -11,8 +11,13 @@ const Forbidden = Loadable(lazy(() => import("pages/warning/403")))
 const ServerError = Loadable(lazy(() => import("pages/warning/500")))
 const Login = Loadable(lazy(() => import("pages/login")))
 
+const FormYupLayout = Loadable(lazy(() => import("pages/form-yup/form-yup.layout")))
+const FormRegisterPage = Loadable(lazy(() => import("pages/form-yup/form-register.page")))
+
+const APICallLayout = Loadable(lazy(() => import("pages/api-call/api-call.layout")))
+const FetchAPiPage = Loadable(lazy(() => import("pages/api-call/fetch-api.page")))
+
 const CustomHookLayout = Loadable(lazy(() => import("pages/custom-hook/custom-hook.layout")))
-const MainHookPage = Loadable(lazy(() => import("pages/custom-hook/main.page")))
 const DebouseHookPage = Loadable(lazy(() => import("pages/custom-hook/debouse.page")))
 const LocalStoragePage = Loadable(lazy(() => import("pages/custom-hook/local-storage.page")))
 const ScrollPositionPage = Loadable(lazy(() => import("pages/custom-hook/scroll-position.page")))
@@ -45,10 +50,24 @@ export const homeRoutes: RouteObject = {
   ],
 }
 
-export const loginRoutes: RouteObject = {
-  path: "/login",
-  element: <Login title="Login" />,
+export const formyupRoutes: RouteObject = {
+  path: "/form-yup",
+  element: <FormYupLayout />,
   errorElement: <ServerError />,
+  children: [
+    { index: true, element: <FormRegisterPage /> },
+    { path: "form-register", element: <FormRegisterPage /> },
+  ],
+}
+
+export const apiCallRoutes: RouteObject = {
+  path: "/api-call",
+  element: <APICallLayout />,
+  errorElement: <ServerError />,
+  children: [
+    { index: true, element: <FetchAPiPage /> },
+    { path: "fetch-api", element: <FetchAPiPage /> },
+  ],
 }
 
 export const hookRoutes: RouteObject = {
@@ -72,11 +91,17 @@ export const reduxRoutes: RouteObject = {
   children: [
     { index: true, element: <ReduxPage /> },
     { path: "context", element: <ReduxPage /> },
-    { path: "redux", element: <ReduxPage /> }]
-  ,
+    { path: "redux", element: <ReduxPage /> },
+  ],
 }
 
-export const AdminRoutes: RouteObject = {
+export const loginRoutes: RouteObject = {
+  path: "/login",
+  element: <Login title="Login" />,
+  errorElement: <ServerError />,
+}
+
+export const _AdminRoutes: RouteObject = {
   path: "/admin",
   element: <AdminLayout />,
   errorElement: <ServerError />,

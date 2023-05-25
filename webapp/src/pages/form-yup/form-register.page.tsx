@@ -1,33 +1,40 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as Yup from 'yup';
+import React from "react"
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as Yup from "yup"
+import PageTitle from "components/common/page-title"
+import PageProps from "pages/page.type"
 
 interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
+  firstName: string
+  lastName: string
+  email: string
+  password: string
 }
 
 const schema = Yup.object().shape({
-  firstName: Yup.string().required('First Name is required'),
-  lastName: Yup.string().required('Last Name is required'),
-  email: Yup.string().email('Invalid email').required('Email is required'),
-  password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
-});
+  firstName: Yup.string().required("First Name is required"),
+  lastName: Yup.string().required("Last Name is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+})
 
-const FormPage: React.FC = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+const FormPage = ({ title }: PageProps) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
     resolver: yupResolver(schema),
-  });
+  })
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
-  };
+    console.log(data)
+  }
 
   return (
     <div>
+      <PageTitle title={title ? title : "Hello, Xoài"} />
       <h1>Form Page</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
@@ -42,18 +49,18 @@ const FormPage: React.FC = () => {
         </div>
         <div>
           <label htmlFor="email">Email</label>
-          <input {...register("email")} type="text" id="email" name="email"/>
+          <input {...register("email")} type="text" id="email" name="email" />
           {errors.email && <span>{errors.email.message}</span>}
         </div>
         <div>
           <label htmlFor="password">Password</label>
-          <input {...register("password")} type="password" id="password" name="password"/>
+          <input {...register("password")} type="password" id="password" name="password" />
           {errors.password && <span>{errors.password.message}</span>}
         </div>
         <button type="submit">Submit</button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default FormPage;
+export default FormPage
