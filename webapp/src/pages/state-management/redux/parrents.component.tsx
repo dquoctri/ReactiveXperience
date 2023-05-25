@@ -10,7 +10,7 @@ const ParentsComponent = () => {
       <div style={{ border: "2px solid black", width: "auto", padding: 10, margin: "4%", display: "block" }}>
         <h1>Parents component</h1>
         <div>
-          <div>Theme: count {count}</div>
+          <div>Count: {count}</div>
           <div style={{ width: "auto", padding: 10, margin: 10 }}>
             <ChildrenComponent />
           </div>

@@ -1,7 +1,6 @@
 import React from "react"
-import { useSelector } from "react-redux"
+// import { useSelector } from "react-redux"
 import { Navigate, useLocation } from "react-router-dom"
-import { authenticationSelector } from "../store/authentication/authentication.selector"
 import ProtectedProps from "./protected.type"
 
 // define interface to represent component props
@@ -10,7 +9,11 @@ export interface Props extends ProtectedProps {
 }
 
 const ProtectedRoute = ({ children, roles }: Props) => {
-  const auth = useSelector(authenticationSelector)
+  // const auth = useSelector(authenticationSelector)
+  const auth = {
+    authenticated: false,
+    roles: ["VIEW"]
+  }
   const location = useLocation()
 
   if (!roles) {

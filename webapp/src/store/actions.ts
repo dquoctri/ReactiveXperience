@@ -1,2 +1,4 @@
-export * from "./common/common.action"
-export * from "./authentication/authentication.action"
+import { createAction } from "@reduxjs/toolkit"
+
+export const increment = createAction("INCREMENT")
+export const decrement = createAction("DECREMENT")

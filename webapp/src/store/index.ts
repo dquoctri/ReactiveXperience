@@ -1,21 +1,17 @@
 import { combineReducers } from "redux"
-import thunk from "redux-thunk"
-import createSagaMiddleware from "redux-saga"
+import { configureStore } from "@reduxjs/toolkit"
 import { persistStore, persistReducer } from "redux-persist"
 import storage from "redux-persist/lib/storage" // defaults to localStorage for web and AsyncStorage for react-native
 import { WebStorage } from "redux-persist/es/types"
+
+
+import thunk from "redux-thunk"
 import _storageSession from "reduxjs-toolkit-persist/lib/storage/session"
-import { configureStore } from "@reduxjs/toolkit"
+
 import Cookies from "js-cookie"
 import logger from "./logger"
-import _rootSaga from "./saga"
 
-import CommonReducer from "./common/common.state"
-import AuthenticationReducer from "./authentication/authentication.state"
-import counterReducer from "./counter/counter.state"
-
-// Create the saga middleware
-const _sagaMiddleware = createSagaMiddleware()
+import counterReducer from "./state"
 
 const _cookieStorage: WebStorage = {
   getItem: async (key: string): Promise<string | null> => {
@@ -34,8 +30,6 @@ const _cookieStorage: WebStorage = {
 
 const rootReducer = combineReducers({
   counter: counterReducer,
-  common: CommonReducer,
-  authentication: AuthenticationReducer,
 })
 
 export const persistConfig = {
@@ -43,8 +37,8 @@ export const persistConfig = {
   storage,
   // storage: storageSession,
   // storage: cookieStorage,
-  blacklist: ["authentication"], // blacklist will not be persisted
-  whitelist: ["common", "counter"], // only whitelist will be persisted
+  blacklist: ["counter"], // blacklist will not be persisted
+  whitelist: [], // only whitelist will be persisted
 }
 
 const isDevelopment = process.env.NODE_ENV === "development"

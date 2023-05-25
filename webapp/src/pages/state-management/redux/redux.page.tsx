@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import PageTitle from "components/common/page-title"
 import PageProps from "pages/page.type"
 import { RootState } from "store"
-import { increment, decrement } from "store/counter/counter.action"
+import { increment, decrement } from "store/actions"
 import ContextComponent from "./context.component"
 
 const ReduxPage = ({ title }: PageProps) => {

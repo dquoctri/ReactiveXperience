@@ -40,78 +40,76 @@ const Management = Loadable(
   { roles: ["ADMIN"] }
 )
 
-export const homeRoutes: RouteObject = {
-  path: "/",
-  element: <MainLayout />,
-  errorElement: <ServerError />,
-  children: [
-    { index: true, element: <Home /> },
-    { path: "about", element: <Home title="About" /> },
-    { path: "403", element: <Forbidden title="Forbidden" /> },
-    { path: "401", element: <Unauthorized title="Unauthorized" /> },
-    { path: "404", element: <NotFound title="NotFound" /> },
-    { path: "*", element: <Navigate to="/404" /> },
-  ],
-}
+const routes: RouteObject[] = [
+  {
+    path: "/",
+    element: <MainLayout />,
+    errorElement: <ServerError />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "about", element: <Home title="About" /> },
+      { path: "403", element: <Forbidden title="Forbidden" /> },
+      { path: "401", element: <Unauthorized title="Unauthorized" /> },
+      { path: "404", element: <NotFound title="NotFound" /> },
+      { path: "*", element: <Navigate to="/404" /> },
+    ],
+  },
+  {
+    path: "/form-yup",
+    element: <FormYupLayout />,
+    errorElement: <ServerError />,
+    children: [
+      { index: true, element: <FormRegisterPage /> },
+      { path: "form-register", element: <FormRegisterPage /> },
+    ],
+  },
+  {
+    path: "/api-call",
+    element: <APICallLayout />,
+    errorElement: <ServerError />,
+    children: [
+      { index: true, element: <FetchAPiPage /> },
+      { path: "fetch-api", element: <FetchAPiPage /> },
+    ],
+  },
+  {
+    path: "/custom-hook",
+    element: <CustomHookLayout />,
+    errorElement: <ServerError />,
+    children: [
+      { index: true, element: <DebouseHookPage /> },
+      { path: "debouse", element: <DebouseHookPage title="Debouse" /> },
+      { path: "local-storage", element: <LocalStoragePage title="Local Storage" /> },
+      { path: "scroll-position", element: <ScrollPositionPage title="Scroll Position" /> },
+      { path: "pagination", element: <PaginationPage title="Pagination" /> },
+      { path: "authentication", element: <AuthenticationPage title="Authentication" /> },
+    ],
+  },
+  {
+    path: "/state-management",
+    element: <StateManagementLayout />,
+    errorElement: <ServerError />,
+    children: [
+      { index: true, element: <ReduxPage /> },
+      { path: "without", element: <WithOutPage /> },
+      { path: "context", element: <ContextPage /> },
+      { path: "redux", element: <ReduxPage /> },
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login title="Login" />,
+    errorElement: <ServerError />,
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    errorElement: <ServerError />,
+    children: [
+      { index: true, element: <AdminDashboard /> },
+      { path: "management", element: <Management /> },
+    ],
+  }
+]
 
-export const formyupRoutes: RouteObject = {
-  path: "/form-yup",
-  element: <FormYupLayout />,
-  errorElement: <ServerError />,
-  children: [
-    { index: true, element: <FormRegisterPage /> },
-    { path: "form-register", element: <FormRegisterPage /> },
-  ],
-}
-
-export const apiCallRoutes: RouteObject = {
-  path: "/api-call",
-  element: <APICallLayout />,
-  errorElement: <ServerError />,
-  children: [
-    { index: true, element: <FetchAPiPage /> },
-    { path: "fetch-api", element: <FetchAPiPage /> },
-  ],
-}
-
-export const hookRoutes: RouteObject = {
-  path: "/custom-hook",
-  element: <CustomHookLayout />,
-  errorElement: <ServerError />,
-  children: [
-    { index: true, element: <DebouseHookPage /> },
-    { path: "debouse", element: <DebouseHookPage title="Debouse" /> },
-    { path: "local-storage", element: <LocalStoragePage title="Local Storage" /> },
-    { path: "scroll-position", element: <ScrollPositionPage title="Scroll Position" /> },
-    { path: "pagination", element: <PaginationPage title="Pagination" /> },
-    { path: "authentication", element: <AuthenticationPage title="Authentication" /> },
-  ],
-}
-
-export const reduxRoutes: RouteObject = {
-  path: "/state-management",
-  element: <StateManagementLayout />,
-  errorElement: <ServerError />,
-  children: [
-    { index: true, element: <ReduxPage /> },
-    { path: "without", element: <WithOutPage /> },
-    { path: "context", element: <ContextPage /> },
-    { path: "redux", element: <ReduxPage /> },
-  ],
-}
-
-export const loginRoutes: RouteObject = {
-  path: "/login",
-  element: <Login title="Login" />,
-  errorElement: <ServerError />,
-}
-
-export const _AdminRoutes: RouteObject = {
-  path: "/admin",
-  element: <AdminLayout />,
-  errorElement: <ServerError />,
-  children: [
-    { index: true, element: <AdminDashboard /> },
-    { path: "management", element: <Management /> },
-  ],
-}
+export default routes
