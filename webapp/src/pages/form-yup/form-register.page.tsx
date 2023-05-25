@@ -28,8 +28,28 @@ const FormPage = ({ title }: PageProps) => {
     resolver: yupResolver(schema),
   })
 
+  const updateData = async (data: FormData) => {
+    try {
+      const response = await fetch("http://localhost:8152/mango/api/users", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+      if (!response.ok) {
+        throw new Error("Request failed")
+      }
+      const json = await response.json()
+      console.log(json)
+    } catch (error) {
+      let message = "Unknown Error"
+      if (error instanceof Error) message = error.message
+      console.log(message)
+    }
+  }
+
   const onSubmit = (data: FormData) => {
     console.log(data)
+    updateData(data)
   }
 
   return (

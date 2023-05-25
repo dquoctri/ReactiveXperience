@@ -4,7 +4,6 @@ import { persistStore, persistReducer } from "redux-persist"
 import storage from "redux-persist/lib/storage" // defaults to localStorage for web and AsyncStorage for react-native
 import { WebStorage } from "redux-persist/es/types"
 
-
 import thunk from "redux-thunk"
 import _storageSession from "reduxjs-toolkit-persist/lib/storage/session"
 

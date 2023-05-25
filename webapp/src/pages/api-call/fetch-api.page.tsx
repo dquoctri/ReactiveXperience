@@ -8,7 +8,7 @@ const FetchExample = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://api.example.com/data")
+        const response = await fetch("http://localhost:8152/mango/api/users")
         if (!response.ok) {
           throw new Error("Request failed")
         }

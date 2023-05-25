@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children, roles }: Props) => {
   // const auth = useSelector(authenticationSelector)
   const auth = {
     authenticated: false,
-    roles: ["VIEW"]
+    roles: ["VIEW"],
   }
   const location = useLocation()
 

@@ -109,7 +109,7 @@ const routes: RouteObject[] = [
       { index: true, element: <AdminDashboard /> },
       { path: "management", element: <Management /> },
     ],
-  }
+  },
 ]
 
 export default routes
