@@ -25,7 +25,11 @@ const PaginationPage = Loadable(lazy(() => import("pages/custom-hook/pagination.
 const AuthenticationPage = Loadable(lazy(() => import("pages/custom-hook/auth-login.page")))
 
 const StateManagementLayout = Loadable(lazy(() => import("pages/state-management/state-management.layout")))
-const ReduxPage = Loadable(lazy(() => import("pages/state-management/redux.page")))
+const WithOutPage = Loadable(
+  lazy(() => import("pages/state-management/without-state-management/without-state-management.page"))
+)
+const ContextPage = Loadable(lazy(() => import("pages/state-management/context/context.page")))
+const ReduxPage = Loadable(lazy(() => import("pages/state-management/redux/redux.page")))
 
 const AdminDashboard = Loadable(
   lazy(() => import("pages/admin/dashboard")),
@@ -90,7 +94,8 @@ export const reduxRoutes: RouteObject = {
   errorElement: <ServerError />,
   children: [
     { index: true, element: <ReduxPage /> },
-    { path: "context", element: <ReduxPage /> },
+    { path: "without", element: <WithOutPage /> },
+    { path: "context", element: <ContextPage /> },
     { path: "redux", element: <ReduxPage /> },
   ],
 }

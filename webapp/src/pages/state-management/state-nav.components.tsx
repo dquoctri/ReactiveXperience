@@ -7,6 +7,12 @@ const ReduxNav = () => (
       <nav>
         <ul>
           <li>
+            <Link to="/state-management/without">Without state management</Link>
+          </li>
+          <li>
+            <Link to="/state-management/context">ContextAPI</Link>
+          </li>
+          <li>
             <Link to="/state-management/redux">Redux</Link>
           </li>
         </ul>
