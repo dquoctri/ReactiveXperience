@@ -4,18 +4,12 @@ import ChildrenComponent from "./children.component"
 const ParentsComponent = () => {
   return (
     <Fragment>
-      <div style={{ border: "2px solid black", width: "auto", padding: 10, margin: "4%", display: "block" }}>
-        <h1>Parents component</h1>
-        <div>
-          <div style={{ width: "auto", padding: 10 }}>
-            <div>Theme: </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
-            </p>
-            <div style={{ width: "auto", padding: 10, margin: 10 }}>
-              <ChildrenComponent />
-            </div>
+      <div style={{ border: "2px solid black", width: "auto", padding: 5, margin: "4%", display: "block" }}>
+        <h3>Parents component</h3>
+        <div style={{ width: "auto", padding: 5 }}>
+          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          <div style={{ width: "auto", display: "flex", padding: 5, margin: 5 }}>
+            <ChildrenComponent />
           </div>
         </div>
       </div>

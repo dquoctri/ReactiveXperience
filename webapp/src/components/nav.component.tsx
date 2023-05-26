@@ -1,33 +1,19 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import "./component.css"
 
 const MainNav = () => (
-  <>
-    <div className="main-nav">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/form-yup">Forms with react-hook-form & yup</Link>
-          </li>
-          <li>
-            <Link to="/api-call">API calls in ReactJS</Link>
-          </li>
-          <li>
-            <Link to="/custom-hook">Custom Hooks example</Link>
-          </li>
-          <li>
-            <Link to="/state-management">State Management</Link>
-          </li>
-          <li>
-            <Link to="/admin">Admin</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </>
+  <div className="main-nav">
+    <nav>
+      <ul>
+        <li><NavLink to="/">Home</NavLink ></li>
+        <li><NavLink to="/form-yup">Forms Validation</NavLink></li>
+        <li><NavLink to="/api-call">API Calls</NavLink></li>
+        <li><NavLink to="/custom-hook">Custom Hooks</NavLink></li>
+        <li><NavLink to="/state-management">State Management</NavLink></li>
+      </ul>
+    </nav>
+  </div>
 )
 
 export default MainNav

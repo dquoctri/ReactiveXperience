@@ -7,18 +7,17 @@ const ChildrenComponent = () => {
   const theme = useContext(ThemeContext)
   return (
     <Fragment>
-      <div style={{ border: "2px solid " + theme, padding: 10 }}>
+      <div style={{ border: "2px solid " + theme, padding: 10, margin: 5 }}>
         <h1 style={{ color: theme }}>Children component</h1>
         <div>
           <div style={{ width: "auto", padding: 10 }}>
             <div>
-              Theme: <b style={{ color: theme }}>{theme}</b> count {count}{" "}
+              Theme: <b style={{ color: theme }}>{theme}</b> count <b style={{ color: theme }}>{count}</b>
             </div>
             <div style={{ padding: 10, margin: 10 }}>
               <p style={{ color: theme }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ullamco laboris nisi ut aliquip
+                ex commodo consequat.
               </p>
             </div>
           </div>

@@ -7,7 +7,6 @@ const ReduxLayout = () => {
   return (
     <>
       <MainNav />
-      <p>State management layout</p>
       <Nav />
       <section className="redux">
         <Outlet />

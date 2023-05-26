@@ -1,24 +1,15 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import "./state-management.css"
 
 const ReduxNav = () => (
-  <>
-    <div className="redux">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/state-management/without">Without state management</Link>
-          </li>
-          <li>
-            <Link to="/state-management/context">ContextAPI</Link>
-          </li>
-          <li>
-            <Link to="/state-management/redux">Redux</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </>
+  <nav>
+    <ul>
+      <li><NavLink to="/state-management/without">Without state management</NavLink></li>
+      <li><NavLink to="/state-management/context">ContextAPI</NavLink></li>
+      <li><NavLink to="/state-management/redux">Redux</NavLink></li>
+    </ul>
+  </nav>
 )
 
 export default ReduxNav
