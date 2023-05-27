@@ -1,30 +1,20 @@
-import React, { Fragment, useState, createContext, useCallback } from "react"
+import React, { Fragment, useState, createContext } from "react"
 import ParrentComponent from "./parrents.component"
 
-export const ThemeContext = createContext<string>("")
-
+export const ThemeContext = createContext<string>("black")
 interface Pros {
   title: string
 }
 
 const ContextComponent = ({ title }: Pros) => {
   const [theme, setTheme] = useState("black")
-  const toggleThemeRed = useCallback(() => {
-    setTheme("red")
-  }, [])
-
-  const toggleThemeBlue = () => {
-    setTheme("blue")
-  }
-
-  const toggleThemeGreen = () => {
-    setTheme("green")
-  }
-
+  const toggleThemeRed = () => { setTheme("red") }
+  const toggleThemeBlue = () => { setTheme("blue") }
+  const toggleThemeGreen = () => { setTheme("green") }
   return (
     <Fragment>
       <ThemeContext.Provider value={theme}>
-        <div style={{ border: "2px solid " + theme, width: "40%", padding: 10, margin: "0 4% 0 4%", display: "block" }}>
+        <div style={{ border: "2px solid " + theme, width: "40%", padding: 10, margin: "0 4% 0 4%" }}>
           <h1 style={{ color: theme }}>{title}</h1>
           <div>
             <div style={{ width: "auto", padding: 10 }}>
