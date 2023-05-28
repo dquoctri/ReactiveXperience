@@ -17,6 +17,7 @@ const FormYubPage = Loadable(lazy(() => import("pages/form-yup/form-yub.page")))
 
 const APICallLayout = Loadable(lazy(() => import("pages/api-call/api-call.layout")))
 const FetchAPiPage = Loadable(lazy(() => import("pages/api-call/fetch-api.page")))
+const AxiosAPiPage = Loadable(lazy(() => import("pages/api-call/axios-api.page")))
 
 const CustomHookLayout = Loadable(lazy(() => import("pages/custom-hook/custom-hook.layout")))
 const DebouseHookPage = Loadable(lazy(() => import("pages/custom-hook/debouse.page")))
@@ -72,6 +73,8 @@ const routes: RouteObject[] = [
     children: [
       { index: true, element: <FetchAPiPage /> },
       { path: "fetch-api", element: <FetchAPiPage /> },
+      { path: "axios-api", element: <AxiosAPiPage /> },
+      
     ],
   },
   {

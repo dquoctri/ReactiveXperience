@@ -9,6 +9,9 @@ const ApiCallNav = () => (
           <li>
             <Link to="/api-call/fetch-api">Fetch API</Link>
           </li>
+          <li>
+            <Link to="/api-call/axios-api">Axios</Link>
+          </li>
         </ul>
       </nav>
     </div>

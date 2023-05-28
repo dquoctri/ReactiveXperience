@@ -25,3 +25,7 @@
 .main-nav .active {
   background-color: #2e222a;
 }
+
+.active {
+  font-weight: bold;
+}

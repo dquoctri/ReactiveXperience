@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const FormYupNav = () => (
   <>
@@ -7,10 +7,10 @@ const FormYupNav = () => (
       <nav>
         <ul>
           <li>
-            <Link to="/form-yup/hook-form">React Hook Form</Link>
+            <NavLink to="/form-yup/hook-form">React Hook Form</NavLink>
           </li>
           <li>
-            <Link to="/form-yup/form-yub">React Hook Form + Schema Validation</Link>
+            <NavLink to="/form-yup/form-yub">React Hook Form + Schema Validation</NavLink>
           </li>
         </ul>
       </nav>

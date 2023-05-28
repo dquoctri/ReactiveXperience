@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import axios from "axios"
 
 const FetchExample = () => {
   const [data, setData] = useState<any>(null)
@@ -7,10 +8,9 @@ const FetchExample = () => {
 
 
   const fetchData = () => {
-    fetch("http://localhost:8152/mango/api/users")
-      .then(response => response.json())
-      .then(json => {
-        setData(json)
+    axios.get("http://localhost:8152/mango/api/users")
+      .then(response => {
+        setData(response)
       })
       .catch(error => {
         setError(error?.message)
@@ -21,10 +21,9 @@ const FetchExample = () => {
   }
 
   const _fetchDataAsync = async () => {
-    await fetch("http://localhost:8152/mango/api/users")
-      .then(response => response.json())
-      .then(json => {
-        setData(json)
+    await axios.get("http://localhost:8152/mango/api/users")
+      .then(response => {
+        setData(response)
       })
       .catch(error => {
         setError(error?.message)
@@ -36,16 +35,11 @@ const FetchExample = () => {
 
   const _updateData = async (data: FormData) => {
     try {
-      const response = await fetch("http://localhost:8152/mango/api/users", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
-      if (!response.ok) {
+      const response = await axios.put("http://localhost:8152/mango/api/users", data);
+      if (response.status !== 200) {
         throw new Error("Update failed")
       }
-      const json = await response.json()
-      console.log(json)
+      console.log(response.data)
     } catch (error) {
       let message = "Unknown Error"
       if (error instanceof Error) message = error.message

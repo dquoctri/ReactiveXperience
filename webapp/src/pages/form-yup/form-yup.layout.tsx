@@ -7,8 +7,8 @@ const ReduxLayout = () => {
   return (
     <>
       <MainNav />
-      <p>State management layout</p>
       <Nav />
+      <p>React Hook Form layout</p>
       <section className="redux">
         <Outlet />
       </section>

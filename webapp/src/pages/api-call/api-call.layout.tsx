@@ -7,7 +7,7 @@ const ReduxLayout = () => {
   return (
     <>
       <MainNav />
-      <p>State management layout</p>
+      <p>API Call layout</p>
       <ApiCallNav />
       <section className="redux">
         <Outlet />
