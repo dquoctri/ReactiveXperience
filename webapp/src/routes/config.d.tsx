@@ -74,7 +74,6 @@ const routes: RouteObject[] = [
       { index: true, element: <FetchAPiPage /> },
       { path: "fetch-api", element: <FetchAPiPage /> },
       { path: "axios-api", element: <AxiosAPiPage /> },
-      
     ],
   },
   {

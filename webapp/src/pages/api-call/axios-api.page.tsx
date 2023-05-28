@@ -6,28 +6,31 @@ const FetchExample = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
 
-
   const fetchData = () => {
-    axios.get("http://localhost:8152/mango/api/users")
+    axios
+      .get("http://localhost:8152/mango/api/users")
       .then(response => {
         setData(response)
       })
       .catch(error => {
         setError(error?.message)
-      }).finally(() => {
+      })
+      .finally(() => {
         setLoading(false)
         console.log("finally")
       })
   }
 
   const _fetchDataAsync = async () => {
-    await axios.get("http://localhost:8152/mango/api/users")
+    await axios
+      .get("http://localhost:8152/mango/api/users")
       .then(response => {
         setData(response)
       })
       .catch(error => {
         setError(error?.message)
-      }).finally(() => {
+      })
+      .finally(() => {
         setLoading(false)
         console.log("finally")
       })
@@ -35,7 +38,7 @@ const FetchExample = () => {
 
   const _updateData = async (data: FormData) => {
     try {
-      const response = await axios.put("http://localhost:8152/mango/api/users", data);
+      const response = await axios.put("http://localhost:8152/mango/api/users", data)
       if (response.status !== 200) {
         throw new Error("Update failed")
       }
@@ -50,7 +53,6 @@ const FetchExample = () => {
   useEffect(() => {
     fetchData()
   }, [])
-
 
   if (loading) {
     return <div>Loading...</div>

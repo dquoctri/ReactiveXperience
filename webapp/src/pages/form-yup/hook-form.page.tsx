@@ -54,7 +54,7 @@ const FormPage = ({ title }: PageProps) => {
     console.log(data)
     setData(data)
     _updateData(data)
-    // reset()
+    reset()
   }
 
   return (
@@ -140,9 +140,11 @@ const FormPage = ({ title }: PageProps) => {
             <button type="submit">Submit</button>
           </form>
         </div>
-        {data && <div style={{ border: "2px solid black", width: "40%", padding: 20, margin: "0 0 0 30px", display: "block" }}>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </div>}
+        {data && (
+          <div style={{ border: "2px solid black", width: "40%", padding: 20, margin: "0 0 0 30px", display: "block" }}>
+            <pre>{JSON.stringify(data, null, 2)}</pre>
+          </div>
+        )}
       </div>
     </div>
   )

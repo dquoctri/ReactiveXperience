@@ -22,7 +22,8 @@ const schema = Yup.object().shape({
     .required()
     .matches(/^[A-Za-z]+$/i, "Begin with a letter"),
   gender: Yup.string().required().oneOf(["female", "male"], "Custom validate selected value"),
-  age: Yup.number().required()
+  age: Yup.number()
+    .required()
     .required("Age is required")
     .when(["gender"], {
       is: "male",
@@ -59,7 +60,7 @@ const FormYubPage = ({ title }: PageProps) => {
 
   const _updateData = async (data: FormData) => {
     try {
-      const response = await axios.post("http://localhost:8152/mango/api/users", data);
+      const response = await axios.post("http://localhost:8152/mango/api/users", data)
       if (response.status !== 200) {
         throw new Error("Update failed")
       }
@@ -76,13 +77,13 @@ const FormYubPage = ({ title }: PageProps) => {
     console.log(data)
     setData(data)
     _updateData(data)
-    // reset()
+    reset()
   }
 
   //We also support schema-based form validation with Yup, Zod , Superstruct & Joi
 
   return (
-    <div >
+    <div>
       <PageTitle title={title ? title : "Hello, Xoài"} />
       <div className="form" style={{ display: "flex" }}>
         <div style={{ border: "2px solid black", width: "40%", padding: 20, margin: "0 0 0 30px", display: "block" }}>
@@ -131,9 +132,11 @@ const FormYubPage = ({ title }: PageProps) => {
             <button type="submit">Submit</button>
           </form>
         </div>
-        {data && <div style={{ border: "2px solid black", width: "40%", padding: 20, margin: "0 0 0 30px", display: "block" }}>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </div>}
+        {data && (
+          <div style={{ border: "2px solid black", width: "40%", padding: 20, margin: "0 0 0 30px", display: "block" }}>
+            <pre>{JSON.stringify(data, null, 2)}</pre>
+          </div>
+        )}
       </div>
     </div>
   )

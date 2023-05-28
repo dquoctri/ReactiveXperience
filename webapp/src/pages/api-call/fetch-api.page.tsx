@@ -5,7 +5,6 @@ const FetchExample = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
 
-
   const fetchData = () => {
     fetch("http://localhost:8152/mango/api/users")
       .then(response => response.json())
@@ -14,7 +13,8 @@ const FetchExample = () => {
       })
       .catch(error => {
         setError(error?.message)
-      }).finally(() => {
+      })
+      .finally(() => {
         setLoading(false)
         console.log("finally")
       })
@@ -28,7 +28,8 @@ const FetchExample = () => {
       })
       .catch(error => {
         setError(error?.message)
-      }).finally(() => {
+      })
+      .finally(() => {
         setLoading(false)
         console.log("finally")
       })
@@ -56,7 +57,6 @@ const FetchExample = () => {
   useEffect(() => {
     fetchData()
   }, [])
-
 
   if (loading) {
     return <div>Loading...</div>
