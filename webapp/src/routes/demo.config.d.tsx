@@ -14,28 +14,30 @@ const NotFound = lazy(() => import("pages/warning/404"))
 const Unauthorized = lazy(() => import("pages/warning/401"))
 const Forbidden = lazy(() => import("pages/warning/403"))
 
-const demoRoutes: RouteObject[] = [{
-  path: "/",
-  element: <MainLayout />,
-  errorElement: <ServerError />,
-  children: [
-    { index: true, element: <HomePage /> },
-    { path: "about", element: <AboutPage title="About" /> },
-    { path: "contact", element: <ContactPage title="Login" /> },
-    { path: "403", element: <Forbidden /> },
-    { path: "401", element: <Unauthorized /> },
-    { path: "404", element: <NotFound /> },
-    { path: "*", element: <Navigate to="/404" /> },
-  ],
-},
-{
-  path: "/product",
-  element: <ProductLayout />,
-  children: [
-    { index: true, element: <ProductPage /> },
-    { path: ":productId", element: <ProductPage /> },
-    { path: "next", element: <NextPage /> },
-  ],
-}]
+const demoRoutes: RouteObject[] = [
+  {
+    path: "/",
+    element: <MainLayout />,
+    errorElement: <ServerError />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: "about", element: <AboutPage title="About" /> },
+      { path: "contact", element: <ContactPage title="Login" /> },
+      { path: "403", element: <Forbidden /> },
+      { path: "401", element: <Unauthorized /> },
+      { path: "404", element: <NotFound /> },
+      { path: "*", element: <Navigate to="/404" /> },
+    ],
+  },
+  {
+    path: "/product",
+    element: <ProductLayout />,
+    children: [
+      { index: true, element: <ProductPage /> },
+      { path: ":productId", element: <ProductPage /> },
+      { path: "next", element: <NextPage /> },
+    ],
+  },
+]
 
 export default demoRoutes

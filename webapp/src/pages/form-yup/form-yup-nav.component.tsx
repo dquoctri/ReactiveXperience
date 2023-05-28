@@ -7,7 +7,10 @@ const FormYupNav = () => (
       <nav>
         <ul>
           <li>
-            <Link to="/form-yup/form-register">Form Register</Link>
+            <Link to="/form-yup/hook-form">React Hook Form</Link>
+          </li>
+          <li>
+            <Link to="/form-yup/form-yub">React Hook Form + Schema Validation</Link>
           </li>
         </ul>
       </nav>

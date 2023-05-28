@@ -16,8 +16,8 @@ const ChildrenComponent = () => {
             </div>
             <div style={{ padding: 10, margin: 10 }}>
               <p style={{ color: theme }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ullamco laboris nisi ut aliquip
-                ex commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ullamco laboris nisi ut
+                aliquip ex commodo consequat.
               </p>
             </div>
           </div>

@@ -12,7 +12,8 @@ const ServerError = Loadable(lazy(() => import("pages/warning/500")))
 const Login = Loadable(lazy(() => import("pages/login")))
 
 const FormYupLayout = Loadable(lazy(() => import("pages/form-yup/form-yup.layout")))
-const FormRegisterPage = Loadable(lazy(() => import("pages/form-yup/form-register.page")))
+const HookFormPage = Loadable(lazy(() => import("pages/form-yup/hook-form.page")))
+const FormYubPage = Loadable(lazy(() => import("pages/form-yup/form-yub.page")))
 
 const APICallLayout = Loadable(lazy(() => import("pages/api-call/api-call.layout")))
 const FetchAPiPage = Loadable(lazy(() => import("pages/api-call/fetch-api.page")))
@@ -59,8 +60,9 @@ const routes: RouteObject[] = [
     element: <FormYupLayout />,
     errorElement: <ServerError />,
     children: [
-      { index: true, element: <FormRegisterPage /> },
-      { path: "form-register", element: <FormRegisterPage /> },
+      { index: true, element: <HookFormPage /> },
+      { path: "hook-form", element: <HookFormPage /> },
+      { path: "form-yub", element: <FormYubPage /> },
     ],
   },
   {
