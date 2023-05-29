@@ -1,8 +1,8 @@
 import React from "react"
 import { BrowserRouter } from "react-router-dom"
 import "./App.css"
-import AppRoutes from "routes"
-// import AppRoutes from "routes/demo.route"
+// import AppRoutes from "routes"
+import AppRoutes from "routes/demo.route"
 
 function App() {
   return (

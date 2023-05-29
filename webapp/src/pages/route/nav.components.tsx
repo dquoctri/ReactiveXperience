@@ -13,19 +13,16 @@ const Nav = () => (
             <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contract</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact?email=vy.doan@mango.dqtri.com&age=0">Contract Mango</NavLink>
+            <NavLink to="/contact?email=vy.doan@mango.dqtri.com&age=0">Contract + Params</NavLink>
           </li>
           <li>
             <NavLink to="/product">Product</NavLink>
           </li>
           <li>
-            <NavLink to="/product/1">Product1</NavLink>
+            <NavLink to="/product/1">Product + Path variable 1</NavLink>
           </li>
           <li>
-            <NavLink to="/product/2">Product2</NavLink>
+            <NavLink to="/product/2">Product + Path variable 2</NavLink>
           </li>
         </ul>
       </nav>
@@ -45,19 +42,16 @@ const _ANav = () => (
             <a href="/about">About</a>
           </li>
           <li>
-            <a href="/contact">Contract</a>
-          </li>
-          <li>
-            <a href="/contact?email=vy.doan@mango.dqtri.com&age=0">Contract Mango</a>
+            <a href="/contact?email=vy.doan@mango.dqtri.com&age=0">Contract + Params</a>
           </li>
           <li>
             <a href="/product">Product</a>
           </li>
           <li>
-            <a href="/product/1">Product1</a>
+            <a href="/product/1">Product details + Path variable 1</a>
           </li>
           <li>
-            <a href="/product/2">Product2</a>
+            <a href="/product/2">Product details + Path variable 2</a>
           </li>
         </ul>
       </nav>
