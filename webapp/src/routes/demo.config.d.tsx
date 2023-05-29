@@ -6,7 +6,6 @@ const HomePage = lazy(() => import("pages/route/home.page"))
 const AboutPage = lazy(() => import("pages/route/about.page"))
 const ContactPage = lazy(() => import("pages/route/contact.page"))
 const ProductPage = lazy(() => import("pages/route/product.page"))
-const NextPage = lazy(() => import("pages/route/next.page"))
 const ProductLayout = lazy(() => import("pages/route/product.layout"))
 const MainLayout = lazy(() => import("pages/route/main.layout"))
 
@@ -35,7 +34,6 @@ const demoRoutes: RouteObject[] = [
     children: [
       { index: true, element: <ProductPage /> },
       { path: ":productId", element: <ProductPage /> },
-      { path: "next", element: <NextPage /> },
     ],
   },
 ]
